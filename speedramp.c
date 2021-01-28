@@ -137,7 +137,7 @@ int main() {
 	setup_default_uart();
 	
 	gpio_init(25);
-    gpio_dir(25, GPIO_OUT);
+    gpio_set_dir(25, GPIO_OUT);
 	
 	printf("Pico Speed test\n");
 	printf("let's see how fast your pico can go ...");
@@ -165,7 +165,7 @@ int main() {
 		 printf("trying procspeed = %0.1f MHz\n", procspeed);
 		 printf("********************\n");
 		 
-		 set_sys_clock(vco,div1,div2);
+		 set_sys_clock_pll(vco,div1,div2);
 		 sleep_ms(100);
 		 setup_default_uart();
 		 sleep_ms(100);
