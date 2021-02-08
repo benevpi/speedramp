@@ -131,10 +131,15 @@ int main() {
 	
 
 	
-	//attempt_sys_clock(procspeed * 1000);
-	sleep_ms(10);
+
 	
-	setup_default_uart();
+	//setup_default_uart();
+	stdio_init_all();
+	
+	
+	
+	//sleep ten sec to let you connect to uart
+	sleep_ms(10000);
 	
 	gpio_init(25);
     gpio_set_dir(25, GPIO_OUT);
@@ -167,7 +172,7 @@ int main() {
 		 
 		 set_sys_clock_pll(vco,div1,div2);
 		 sleep_ms(100);
-		 setup_default_uart();
+		 //setup_default_uart();
 		 sleep_ms(100);
 		
     }	
